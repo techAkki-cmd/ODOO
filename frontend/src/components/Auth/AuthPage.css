@@ -1,0 +1,236 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+}
+
+.auth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  top: 40%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.shape-4 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.auth-paper {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-title {
+  font-weight: 700 !important;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px !important;
+}
+
+.auth-subtitle {
+  color: #666 !important;
+  font-weight: 400 !important;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.toggle-btn {
+  flex: 1;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.toggle-btn.MuiButton-contained {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.toggle-btn.MuiButton-outlined {
+  border: none !important;
+  color: #666 !important;
+  background: transparent !important;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 15px;
+}
+
+.form-field .MuiTextField-root {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+
+.form-field .MuiOutlinedInput-root {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-field .MuiOutlinedInput-root:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-field .MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+}
+
+.input-icon {
+  color: #667eea !important;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2) !important;
+  color: white !important;
+  padding: 15px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6) !important;
+}
+
+.divider {
+  margin: 20px 0 !important;
+}
+
+.divider .MuiDivider-wrapper {
+  padding: 0 20px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-btn.google {
+  background: #db4437 !important;
+  color: white !important;
+}
+
+.social-btn.github {
+  background: #333 !important;
+  color: white !important;
+}
+
+.social-btn.linkedin {
+  background: #0077b5 !important;
+  color: white !important;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .auth-paper {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .name-fields {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .shape {
+    display: none;
+  }
+}
