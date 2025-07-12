@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AuthPage from './components/Auth/AuthPage';
 import EmailVerification from './components/Auth/EmailVerification';
 import Landing from './pages/Landing';
+import Home from './pages/Home';
 import SkillSwap from './pages/SkillSwap';
 import Request from './pages/Request';
 import Profile from './pages/Profile';
@@ -35,6 +36,7 @@ function App() {
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/verify-email/:token" element={<EmailVerification />} />
             <Route path="/" element={<Landing />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/skillswap" element={<SkillSwap />} />
             <Route path="/request" element={<Request />} />
             <Route path="/profile" element={<Profile />} />
