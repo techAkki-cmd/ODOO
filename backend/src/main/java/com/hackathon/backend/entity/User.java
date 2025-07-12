@@ -42,6 +42,31 @@ public class User {
     @Column(nullable = false)
     private Boolean active = true;
 
+    // Profile fields for landing page
+    @Column(nullable = false)
+    private Boolean isProfilePublic = true;
+
+    @Column(length = 1000)
+    private String bio;
+
+    @Column(length = 100)
+    private String location;
+
+    @Column(length = 500)
+    private String profilePhoto;
+
+    @Column(nullable = false)
+    private Double averageRating = 0.0;
+
+    @Column(nullable = false)
+    private Integer totalReviews = 0;
+
+    @Column(nullable = false)
+    private Integer completedSwaps = 0;
+
+    @Enumerated(EnumType.STRING)
+    private Availability availability = Availability.FLEXIBLE;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
@@ -63,7 +88,7 @@ public class User {
         this.roles.add(Role.USER);
     }
 
-    // Getters and Setters
+    // All getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -84,6 +109,30 @@ public class User {
 
     public Boolean getActive() { return active; }
     public void setActive(Boolean active) { this.active = active; }
+
+    public Boolean getIsProfilePublic() { return isProfilePublic; }
+    public void setIsProfilePublic(Boolean isProfilePublic) { this.isProfilePublic = isProfilePublic; }
+
+    public String getBio() { return bio; }
+    public void setBio(String bio) { this.bio = bio; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public String getProfilePhoto() { return profilePhoto; }
+    public void setProfilePhoto(String profilePhoto) { this.profilePhoto = profilePhoto; }
+
+    public Double getAverageRating() { return averageRating; }
+    public void setAverageRating(Double averageRating) { this.averageRating = averageRating; }
+
+    public Integer getTotalReviews() { return totalReviews; }
+    public void setTotalReviews(Integer totalReviews) { this.totalReviews = totalReviews; }
+
+    public Integer getCompletedSwaps() { return completedSwaps; }
+    public void setCompletedSwaps(Integer completedSwaps) { this.completedSwaps = completedSwaps; }
+
+    public Availability getAvailability() { return availability; }
+    public void setAvailability(Availability availability) { this.availability = availability; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }

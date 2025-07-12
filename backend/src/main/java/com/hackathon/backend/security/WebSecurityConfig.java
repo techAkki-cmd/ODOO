@@ -47,12 +47,22 @@ public class WebSecurityConfig {
         http.cors().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests()
+                // Public endpoints - no authentication required
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/profiles/**").permitAll()
+                .requestMatchers("/api/stats").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
+                .requestMatchers("/uploads/**").permitAll() // For serving uploaded files
+
+                // ✅ FIXED: Protected endpoints - require authentication
+                .requestMatchers("/api/profile/**").authenticated()  // This covers /api/profile/me/photo
+                .requestMatchers("/api/connections/**").authenticated()
+                .requestMatchers("/api/skillswaps/**").authenticated()
+
+                // Default - require authentication
                 .anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 
