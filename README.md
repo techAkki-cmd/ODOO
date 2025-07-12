@@ -1,4 +1,4 @@
-# 🏥 SkillSwap – Exchange knowledge, not money. Grow by sharing your skills🚀
+#  SkillSwap – Exchange knowledge, not money. Grow by sharing your skills🚀
 
 The **Skill Swap** Platform is a peer-to-peer web application that allows users to offer their skills and request skills from others in return — all without the need for money. Designed to promote collaborative learning, this platform helps individuals connect, share expertise, and grow together by exchanging time and knowledge.
 
