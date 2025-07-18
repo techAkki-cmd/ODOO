@@ -73,12 +73,24 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    // ✅ ADD THIS MISSING FIELD
+    @Column(name = "receive_notifications", nullable = false)
+    private Boolean receiveNotifications = true; // Default value
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
     // Constructors
     public User() {}
+
+    public Boolean getReceiveNotifications() {
+        return receiveNotifications;
+    }
+
+    public void setReceiveNotifications(Boolean receiveNotifications) {
+        this.receiveNotifications = receiveNotifications;
+    }
 
     public User(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
